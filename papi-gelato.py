@@ -1,3 +1,5 @@
+print('welkom bij Papi Gelato')
+
 def bolletjes():
     aantal = input('hoeveel bolletjes wilt u? ')
     fout = 'sorry dit begrijp ik niet'
