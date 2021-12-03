@@ -17,7 +17,7 @@ def bolletjes():
 
     aantal = input('hoeveel bolletjes wilt u? ')
     aantalBollen += int(aantal)
-    fout = 'sorry dit begrijp ik niet'
+    fout = 'Sorry dat is geen optie die we aanbieden...'
     klaar = 'bedankt en tot ziens!'
     nummer = 0
     
@@ -27,8 +27,8 @@ def bolletjes():
 
             for c in range(aantal):
                 nummer += 1
-                smaak = input('welke smaak wilt u voor bolletje {} A) aardbei C) chocolade M) munt of V) vanille? '.format(nummer))
-                if smaak == 'a' or smaak == 'A' or smaak == 'c' or smaak == 'C' or smaak == 'm' or smaak == 'M' or smaak == 'v' or smaak == 'V':
+                smaak = input('welke smaak wilt u voor bolletje {} A) aardbei C) chocolade of V) vanille? '.format(nummer))
+                if smaak == 'a' or smaak == 'A' or smaak == 'c' or smaak == 'C' or smaak == 'v' or smaak == 'V':
                     pass
                 else:
                     print(fout)
@@ -78,7 +78,7 @@ def bolletjes():
             topping()
             for c in range(aantal):
                 nummer += 1
-                smaak = input('welke smaak wilt u voor bolletje {} A) aardbei C) chocolade M) munt of V) vanille? '.format(nummer))
+                smaak = input('welke smaak wilt u voor bolletje {} A) aardbei C) chocolade of V) vanille? '.format(nummer))
 
             print('dan krijgt u van mij een bakje met {} bolletjes'.format(aantal))
             keuze4 = input('wilt u nog meer bestellen? (Y/N) ')
@@ -103,9 +103,9 @@ def bon():
     global caramelPrijs
     slagroomPrijs = 0.50
     sprinkelsPrijs = 0.30
-    totaal = aantalBollen * 1.10 + hoorntjes * 1.25 + bakjes * 0.75 + slagroom * slagroomPrijs + sprinkles * sprinkelsPrijs + caramelSaus * caramelPrijs
+    totaal = aantalBollen * 0.95 + hoorntjes * 1.25 + bakjes * 0.75 + slagroom * slagroomPrijs + sprinkles * sprinkelsPrijs + caramelSaus * caramelPrijs
     print('   -----"papi gelato"-----')
-    print('bolletjes     {} x 1.10   = €'.format(aantalBollen) + '{:.2f}'.format(aantalBollen * 1.10))
+    print('bolletjes     {} x 0.95   = €'.format(aantalBollen) + '{:.2f}'.format(aantalBollen * 0.95))
     print('hoorntjes     {} x 1.25   = €'.format(hoorntjes) + '{:.2f}'.format(hoorntjes * 1.25))
     print('bakje         {} x 0.75   = €'.format(bakjes) + '{:.2f}'.format(bakjes * 0.75))
     print('topping                   = € {}'.format(slagroom * slagroomPrijs + sprinkles * sprinkelsPrijs + caramelSaus * caramelPrijs))
@@ -139,14 +139,14 @@ def zakelijk():
     elif vraag == 'b' or vraag == 'B':
         amount = int(input('hoeveel liter ijs wilt u kopen '))
     else:
-        print('sorry dat begrijp ik niet')
+        print('Sorry dat is geen optie die we aanbieden...')
     
     if amount:
         global aantalLiter
         aantalLiter += int(amount)
         for i in range(amount):
             nummer += 1
-            smaak = input('welke smaak wilt u voor liter {} A) aardbei C) chocolade M) munt of V) vanille? '.format(nummer))
+            smaak = input('welke smaak wilt u voor liter {} A) aardbei C) chocolade of V) vanille? '.format(nummer))
         vraag2 = input('wilt u nog meer bestellen? Y/N ')
         if vraag2 == 'Y' or vraag2 == 'y':
             return zakelijk
@@ -160,7 +160,8 @@ def zakelijkBon():
     print('   -----"papi gelato"-----')
     print('liter        {} x €9.80  = €{} '.format(aantalLiter, aantalLiter * 9.80))
     print('totaal                   = €{} '.format(aantalLiter * 9.80))
-    print('btw (9%)                 = €{} '.format(prijs / 100 * 9))
+    print('btw (6%)                 = €{} '.format(prijs / 100 * 6))
+    exit()
     
 zakelijk()
 bolletjes()
